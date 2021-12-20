@@ -26,5 +26,5 @@ jobs:
         
     - uses: ncipollo/release-action@v1
       with:
-        artifacts: "log4shell-detector.exe"
+        artifacts: "dist/*.exe"
         token: ${{ secrets.GITHUB_TOKEN }}
