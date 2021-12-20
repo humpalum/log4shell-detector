@@ -14,17 +14,17 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Package Application
+    - name: Package Application Windows
       uses: JackMcKew/pyinstaller-action-windows@main
       with:
         path: ./
-
-    - uses: actions/upload-artifact@v2
-      with:
-        name: log4shell-detector.exe
-        path: ./dist/windows/
         
-    - uses: ncipollo/release-action@v1
+    - name: Package Application linux
+      uses: JackMcKew/pyinstaller-action-linux@main
       with:
-        artifacts: "dist/windows/*.exe"
+        path: ./
+        
+    - uses: ncipollo/release-action@v1.9.0
+      with:
+        artifacts: "dist/windows/*.exe,dist/linux/*"
         token: ${{ secrets.GITHUB_TOKEN }}
