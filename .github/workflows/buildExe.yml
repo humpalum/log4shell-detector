@@ -24,6 +24,11 @@ jobs:
       with:
         path: ./
         
+    - name: Rename Files
+      run: |
+        mv "dist/windows/log4shell-detector.exe" "dist/windows/log4shell-detector-win.exe"
+        mv "dist/linux/log4shell-detector" "dist/windows/win-log4shell-detector-lin"
+        
     - uses: ncipollo/release-action@v1.9.0
       with:
         artifacts: "dist/windows/*.exe,dist/linux/*"
