@@ -23,3 +23,8 @@ jobs:
       with:
         name: log4shell-detector.exe
         path: ./dist/windows
+        
+    - uses: ncipollo/release-action@v1
+      with:
+        artifacts: "log4shell-detector.exe"
+        token: ${{ secrets.GITHUB_TOKEN }}
