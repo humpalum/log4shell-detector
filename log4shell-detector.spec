@@ -5,7 +5,7 @@ block_cipher = None
 
 
 a = Analysis(['log4shell-detector.py'],
-             pathex=[],
+             pathex=['Log4ShellDetector/'],
              binaries=[],
              datas=[],
              hiddenimports=[],
