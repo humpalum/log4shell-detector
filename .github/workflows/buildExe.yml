@@ -1,10 +1,10 @@
 name: Package Application with Pyinstaller
 
-on:
+on: 
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    tags:
+    - '*'
+
 
 jobs:
   build:
